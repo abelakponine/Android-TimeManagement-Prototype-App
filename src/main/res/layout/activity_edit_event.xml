@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="14sp"
+                android:paddingRight="14sp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="Add Title"
+                    android:inputType="textPersonName"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="@drawable/text_view_background"
+                    android:text="Date and time"
+                    android:textSize="20sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Starts" />
+
+                    <Button
+                        android:id="@+id/startDateButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:text="DD/MM/YYYY"
+                        android:onClick="setStartDate"/>
+
+                    <Button
+                        android:id="@+id/startTimeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:text="HH:MM"
+                        android:onClick="setStartTime"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4sp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ends  " />
+
+                    <Button
+                        android:id="@+id/endDateButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:text="DD/MM/YYYY"
+                        android:onClick="setEndDate"/>
+
+                    <Button
+                        android:id="@+id/endTimeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/edit_text_background"
+                        android:text="HH:MM"
+                        android:onClick="setEndTime"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="@drawable/text_view_background"
+                    android:text="Location"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="Add location"
+                    android:inputType="textPersonName"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="@drawable/text_view_background"
+                    android:text="Description"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:background="@drawable/edit_text_background"
+                    android:ems="10"
+                    android:hint="Add description"
+                    android:inputType="textPersonName"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="@drawable/text_view_background"
+                    android:text="Colour"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4sp"
+                    android:background="@drawable/edit_text_background"
+                    android:text="Choose colour" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="@drawable/text_view_background"
+                    android:text="Attachment"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4sp"
+                    android:background="@drawable/edit_text_background"
+                    android:text="Add attachment" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4sp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginEnd="4sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="@drawable/text_view_background"
+                    android:text="Notification"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4sp"
+                    android:background="@drawable/edit_text_background"
+                    tools:text="00:00 mintues before start" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40sp"
+                    android:layout_marginTop="30sp"
+                    android:layout_marginEnd="40sp"
+                    android:layout_marginBottom="4sp"
+                    android:background="#03A9F4"
+                    android:text="Save event" />
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

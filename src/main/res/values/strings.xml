@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Strath Time Manager</string>
+
+    <string name="new_message_notification_title_template">New message: You have %1$s</string>
+
+    <!-- TODO: remove this placeholder text -->
+    <string name="new_message_notification_placeholder_text_template">Title: CS991 Lecture (Mobile Application Development)
+        \nVenue: Livingstone Tower - Level 1301
+        \nTime: 11:00 AM
+        \nDue: 15 mins
+    </string>
+
+    <string name="action_share">Share</string>
+    <string name="action_reply">Reply</string>
+</resources>

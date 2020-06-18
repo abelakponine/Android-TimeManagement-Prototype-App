@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewAcivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingRight="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="55sp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="showUpcomingEvents"
+            android:orientation="vertical"
+            android:padding="10sp"
+            android:textAlignment="center">
+
+            <Button
+                android:layout_width="23sp"
+                android:layout_height="27sp"
+                android:background="@drawable/ic_bell"
+                android:onClick="showUpcomingEvents"
+                android:rotation="-20" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="-12sp"
+                android:layout_marginTop="-14sp"
+                android:background="@drawable/red_circle"
+                android:gravity="center"
+                android:minWidth="0sp"
+                android:minHeight="0sp"
+                android:onClick="showUpcomingEvents"
+                android:paddingLeft="4sp"
+                android:paddingTop=".5sp"
+                android:paddingRight="4sp"
+                android:paddingBottom="0.5sp"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:translationX="5sp" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_marginLeft="5sp"
+            android:background="@drawable/ic_cog"
+            android:onClick="showSettings" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

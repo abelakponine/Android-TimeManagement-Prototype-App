@@ -1,0 +1,1203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewAcivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eaeaea"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="40sp"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical"
+                android:paddingLeft="10sp"
+                android:paddingTop="4sp"
+                android:paddingRight="10sp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:paddingLeft="2sp"
+                    android:paddingRight="2sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10sp"
+                        android:background="@drawable/border_radius_2"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingLeft="10sp"
+                        android:paddingTop="10sp"
+                        android:paddingRight="10sp"
+                        android:paddingBottom="10sp">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4sp"
+                            android:layout_marginRight="4sp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_radius_gray"
+                            android:ems="10"
+                            android:hint="Search Event"
+                            android:inputType="textPersonName"
+                            android:padding="10sp"
+                            android:textColor="@android:color/black" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5sp"
+                            android:background="@drawable/border_circle"
+                            android:gravity="center"
+                            android:onClick="startSearch"
+                            android:orientation="horizontal"
+                            android:padding="6sp">
+
+                            <Button
+                                style="?android:attr/selectableItemBackgroundBorderless"
+                                android:layout_width="20sp"
+                                android:layout_height="20sp"
+                                android:background="@drawable/ic_search"
+                                android:onClick="startSearch" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="14sp"
+                        android:layout_marginTop="20sp"
+                        android:text="View Events By:"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8sp"
+                        android:layout_marginBottom="20sp"
+                        android:background="@color/white"
+                        android:orientation="vertical"
+                        android:paddingLeft="6sp"
+                        android:paddingTop="4sp"
+                        android:paddingRight="6sp"
+                        android:paddingBottom="20sp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="8sp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <Button
+                                android:id="@+id/daybtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@android:color/white"
+                                android:text="Days"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/weekbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="-1sp"
+                                android:layout_weight="1"
+                                android:background="#eaeaea"
+                                android:text="Week"
+                                android:textAllCaps="false" />
+
+                            <Button
+                                android:id="@+id/monthbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:background="@drawable/border_radius_gray_right"
+                                android:text="Month"
+                                android:textAllCaps="false" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/days_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10sp"
+                            android:layout_marginTop="5sp"
+                            android:layout_marginRight="10sp"
+                            android:minHeight="200sp"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10sp"
+                                android:layout_marginTop="10sp"
+                                android:layout_marginBottom="4sp"
+                                android:layout_weight="1"
+                                android:text="Select Date:" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="4sp"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/day"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4sp"
+                                    android:layout_marginBottom="4sp"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="Date"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/month"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4sp"
+                                    android:layout_marginBottom="4sp"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="Month"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:id="@+id/year"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4sp"
+                                    android:layout_marginBottom="4sp"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="Year"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/event1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:layout_weight="1"
+                                android:background="#92FFEDAF"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Title:    C991 Lecture"
+                                    android:textColor="#404040"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Venue:    Lingstone Tower"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Date:    12/03/2020 @ 10:00 am  (Today)"
+                                    android:textColor="#404040" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Due Time:    15 mins"
+                                    android:textColor="#404040" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/event2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:layout_weight="1"
+                                android:background="#5CA5F09D"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Title:    C993 Lecture"
+                                    android:textColor="#404040"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Venue:    Lingstone Tower"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Date:    12/03/2020 @ 11:00 am  (Today)"
+                                    android:textColor="#404040" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Due Time:    1 hour"
+                                    android:textColor="#404040" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/event3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:layout_weight="1"
+                                android:background="#FCFFD2D2"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Title:    C990 Lecture"
+                                    android:textColor="#404040"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Venue:    Royal College Building"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Date:    12/03/2020 @ 9:00 am  (Missed)"
+                                    android:textColor="#404040" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Due Time:    Elapsed"
+                                    android:textColor="#404040" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/week_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10sp"
+                            android:layout_marginTop="5sp"
+                            android:layout_marginRight="10sp"
+                            android:minHeight="200sp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4sp"
+                                android:text="2nd Week of March 2020 (This Week)"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sunday 08/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="8sp"
+                                    android:layout_marginBottom="8sp"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Event Scheduled."
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/event4"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Monday 09/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8sp"
+                                        android:layout_marginBottom="8sp"
+                                        android:background="#5CA5F09D"
+                                        android:padding="8sp"
+                                        android:text="Upcoming:    C991 Lecture - Livingstone Tower\nDate:    12/03/2020 @ 10:00 am"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8sp"
+                                        android:layout_marginBottom="8sp"
+                                        android:background="#FCFFD2D2"
+                                        android:padding="8sp"
+                                        android:text="Missed:    C992 Lecture - Livingstone Tower\nDate:    12/03/2020 @ 9:00 am"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/event5"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Tuesday 10/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8sp"
+                                        android:layout_marginBottom="8sp"
+                                        android:background="#5CA5F09D"
+                                        android:padding="8sp"
+                                        android:text="Upcoming:    C993 Lecture - Livingstone Tower\nDate:    12/03/2020 @ 10:00 am"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8sp"
+                                        android:layout_marginBottom="8sp"
+                                        android:background="#92FFEDAF"
+                                        android:padding="8sp"
+                                        android:text="Due (20 mins):    \nC991 Lecture - Livingstone Tower\nDate:    12/03/2020 @ 9:00 am"
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Wednesday 08/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="8sp"
+                                    android:layout_marginBottom="8sp"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Event Scheduled."
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Thursday 08/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="8sp"
+                                    android:layout_marginBottom="8sp"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Event Scheduled."
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Friday 08/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="8sp"
+                                    android:layout_marginBottom="8sp"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Event Scheduled."
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="8sp"
+                                android:layout_marginBottom="8sp"
+                                android:background="#f8f8f8"
+                                android:minHeight="70sp"
+                                android:orientation="vertical"
+                                android:padding="8sp">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="Saturday 08/03/2020"
+                                    android:textStyle="bold" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_margin="8sp"
+                                    android:layout_marginBottom="8sp"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="14sp">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Event Scheduled."
+                                        android:textStyle="bold" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/month_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10sp"
+                            android:layout_marginTop="5sp"
+                            android:layout_marginRight="10sp"
+                            android:layout_weight="1"
+                            android:minHeight="200sp"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4sp"
+                                    android:layout_marginBottom="4sp"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="Date"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4sp"
+                                    android:layout_marginBottom="4sp"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="Month"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold" />
+
+                                <EditText
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4sp"
+                                    android:layout_marginBottom="4sp"
+                                    android:layout_weight="1"
+                                    android:ems="10"
+                                    android:hint="Year"
+                                    android:inputType="textPersonName"
+                                    android:textAlignment="center"
+                                    android:textColor="@android:color/black"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#83FFECE1"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="1" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="2" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="3" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="4" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="5" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="6" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="7" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="8" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="9" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="10" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="11" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="12" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="13" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="14" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="15" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="16" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="17" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="18" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="19" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="20" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="21" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="22" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="23" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="24" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="25" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="26" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="27" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="28" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="29" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="30" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="31" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="25"
+                                        android:visibility="invisible" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="26"
+                                        android:visibility="invisible" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="27"
+                                        android:visibility="invisible" />
+
+                                    <Button
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text="28"
+                                        android:visibility="invisible" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/upcoming_events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#b5000000"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="15sp"
+                        android:text="Upcoming Events:"
+                        android:textColor="#ffffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="30sp"
+                        android:layout_height="30sp"
+                        android:layout_marginRight="30sp"
+                        android:alpha="0.9"
+                        android:background="@drawable/ic_times_circle"
+                        android:minWidth="@null"
+                        android:onClick="hideUpcomingEvents" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="15sp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8sp"
+                        android:layout_marginBottom="8sp"
+                        android:background="#E0CB7E"
+                        android:minHeight="70sp"
+                        android:orientation="vertical"
+                        android:padding="8sp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Title:    C991 Lecture"
+                            android:textColor="#404040"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Venue:    Lingstone Tower"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Date:    12/03/2020 @ 10:00 am  (Today)"
+                            android:textColor="#404040" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Due Time:    15 mins"
+                            android:textColor="#404040" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/settings_tab"
+            android:layout_width="match_parent"
+            android:layout_height="120sp"
+            android:background="#B5000000"
+            android:orientation="vertical"
+            android:translationY="-140sp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#60000000"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:padding="18sp"
+                    android:text="Turn on notification"
+                    android:textColor="#ffffff" />
+
+                <Switch
+                    android:id="@+id/notify_settings"
+                    android:layout_width="65sp"
+                    android:layout_height="20sp"
+                    android:layout_marginRight="30sp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:elegantTextHeight="false"
+                    android:textColorLink="#2EC029" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/save_settings"
+                android:layout_width="50sp"
+                android:layout_height="40sp"
+                android:layout_gravity="right"
+                android:layout_marginTop="4sp"
+                android:layout_marginRight="20sp"
+                android:alpha="0.8"
+                android:minWidth="@null"
+                android:minHeight="@null"
+                android:text="@android:string/ok" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/search_events"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp"
+            android:translationY="100sp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/border_radius_2"
+                android:orientation="vertical"
+                android:padding="10sp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_radius_gray"
+                    android:minHeight="36sp"
+                    android:onClick="closeSearch"
+                    android:text="Close search" />
+
+                <LinearLayout
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border_radius_2"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="10sp"
+                    android:translationY="100sp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Searching Events.."
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:id="@+id/spinner_icon"
+                        android:layout_width="50sp"
+                        android:layout_height="50sp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20sp"
+                        android:background="@drawable/ic_spinner" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/dummy_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <TextView
+                        android:layout_width="50sp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="100sp"
+                        android:background="@drawable/ic_sad_tear" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8sp"
+                        android:text="Dummy text: \nOops! event not found!"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/createEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/ic_plus_circle"
+            android:minWidth="0sp"
+            android:minHeight="0sp"
+            android:translationX="-25sp"
+            android:translationY="-20sp" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

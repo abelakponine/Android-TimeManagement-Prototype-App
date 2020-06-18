@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:fitsSystemWindows="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#E6E6E6"
+                    android:clipToPadding="true"
+                    android:fitsSystemWindows="false"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="40sp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="25sp"
+                        android:text="Strath Time Manager"
+                        android:textColor="#299949"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_margin="2sp"
+                            app:srcCompat="@drawable/ic_user" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8sp"
+                            android:text="User Login"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/loginError"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4sp"
+                        android:text="Username or Password cannot be empty."
+                        android:textColor="@android:color/holo_red_light"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4sp"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:hint="Username"
+                        android:inputType="textPersonName"
+                        android:maxWidth="320sp"
+                        android:padding="10sp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#727272"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4sp"
+                        android:background="@android:color/white"
+                        android:ems="10"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:maxWidth="320sp"
+                        android:padding="10sp"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="#727272"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <Button
+                                android:id="@+id/loginbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4sp"
+                                android:layout_marginTop="4sp"
+                                android:layout_marginEnd="4sp"
+                                android:layout_marginBottom="4sp"
+                                android:background="#299949"
+                                android:text="Login"
+                                android:textSize="16sp" />
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:id="@+id/login_spinner"
+                            style="?attr/borderlessButtonStyle"
+                            android:layout_width="25sp"
+                            android:layout_height="25sp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="48sp"
+                            android:layout_marginTop="-40sp"
+                            android:background="@drawable/ic_spinner"
+                            android:textAlignment="center"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/regbtn"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34sp"
+                        android:background="@android:color/transparent"
+                        android:minHeight="0dip"
+                        android:text="Register" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
